@@ -46,22 +46,23 @@
             label = "CHANGETABLEFT";
         };
 
-        command_grave_macro: command_grave_macro {
+        cmd_grave_macro: cmd_grave_macro {
             compatible = "zmk,behavior-macro";
+            label = "CMD_GRAVE_MACRO";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp GRAVE>;
-            label = "COMMAND_GRAVE_MACRO";
+            bindings
+                = <&kp LGUI &kp GRAVE>;
         };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        combo_cmd_equal_as_cmd_backtick {
-            bindings = <&command_grave_macro>;
-            key-positions = <64 0>;
+        combo_cmd_equal_as_cmd_grave {
+            bindings = <&cmd_grave_macro>;
+            key-positions = <28 42>;  // Replace with the appropriate key positions for Command and =
             timeout-ms = <50>;
-            layers = <0>;
+            layers = <0>;  // Add other layers if needed
         };
     };
 
