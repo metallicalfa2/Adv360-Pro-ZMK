@@ -45,6 +45,24 @@
             bindings = <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp LEFT_BRACKET>;
             label = "CHANGETABLEFT";
         };
+
+        command_grave_macro: command_grave_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_COMMAND &kp GRAVE>;
+            label = "COMMAND_GRAVE_MACRO";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_cmd_equal_as_cmd_backtick {
+            bindings = <&command_grave_macro>;
+            key-positions = <64 0>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
     };
 
     keymap {
